@@ -126,6 +126,24 @@ spec:
   - name: vol 
     emptyDir: {} 
 ```
+Solution manifest file to create a multi-container pod called yellow as follows:
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: yellow
+spec:
+  containers:
+  - name: lemon
+    image: busybox
+    command:
+      - sleep
+      - "1000"
+
+  - name: gold
+    image: redis
+```
 
 ```bash
 # Apply pod
